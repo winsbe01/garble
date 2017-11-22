@@ -1,5 +1,6 @@
 delimiter |
 
+# get a name based on the input string and the gender
 create function garble.gb_name_by_gender (in_name varchar(50), in_gender char(1))
 returns varchar(50)
 begin
@@ -26,6 +27,7 @@ begin
   return out_name;
 end|
 
+# get a name based on an input string, without regard to gender
 create function garble.gb_name(in_name varchar(50))
 returns varchar(50)
 begin
@@ -38,6 +40,7 @@ begin
 	return garble.gb_name_by_gender(in_name, gender);
 end|
 
+# get a last name based on the input string
 create function garble.gb_surname (in_name varchar(100))
 returns varchar(100)
 begin

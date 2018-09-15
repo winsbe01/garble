@@ -16,12 +16,30 @@
 ## How to use
 
 ### Names:
+
+First names can be garbled directly, or a gender can be specified.
 ```
-select garble.gb_name("Michael") => SAMARA
-select garble.gb_name_by_gender("Michael", "M") => EMERSON
+select garble.gb_name("Ben") => DULCIE
+select garble.gb_name_by_gender("Ben", "M") => MARION
+```
+Last names can be garbled, too!
+```
+select garble.gb_surname("Winston") => DUNN
 ```
 
 ### Dates:
 ```
 select garble.gb_date_by_tol("1992-01-06",5) => 1993-06-20
+```
+
+### Addresses:
+
+Email addresses can be garbled into a seven digit number:
+```
+select garble.gb_email("garble@benwinston.us") => 4499513@example.net
+```
+They can also be garbled by name into a first-initial-last-name format, with their
+names reflective of their garbled names:
+```
+select garble.gb_email_by_name("Ben", "Winston") => ddunn@example.org
 ```
